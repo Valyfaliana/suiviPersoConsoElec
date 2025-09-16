@@ -2,6 +2,9 @@ from PySide6.QtWidgets import QMainWindow, QStackedWidget, QApplication
 from app.controller.auth.signInController import SignInController
 from app.controller.auth.signUpController import SignUpController
 
+PAGE_CONNEXION = 0
+PAGE_INSCRIPTION = 1
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()

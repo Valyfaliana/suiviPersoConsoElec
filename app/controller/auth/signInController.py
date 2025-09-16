@@ -6,6 +6,8 @@ from app.utils.passwordHasher import verify_password
 
 class SignInController:
     def __init__(self, basculer_page):
+        from app.main_window import PAGE_INSCRIPTION
+        
         self.page = PageSignIn()
         self.view = self.page.widget
         self.model = UserModel()
@@ -14,7 +16,7 @@ class SignInController:
         self.page.connexion_signal.connect(self.do_connexion)
 
         # Quand on clique sur le btn Inscription
-        self.page.btnInscription.clicked.connect(lambda: basculer_page("Inscription", 1))
+        self.page.btnInscription.clicked.connect(lambda: basculer_page("Inscription", PAGE_INSCRIPTION))
 
     def do_connexion(self, pseudo, password):
         user = self.model.get_user_by_pseudo(pseudo)
