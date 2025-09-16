@@ -13,7 +13,7 @@ class UserModel:
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nom TEXT NOT NULL,
                 prenoms TEXT NOT NULL,
-                email TEXT NOT NULL UNIQUE,
+                pseudo TEXT NOT NULL UNIQUE,
                 password TEXT NOT NULL
             )
         """)
@@ -21,10 +21,10 @@ class UserModel:
         conn.close()
 
     @staticmethod
-    def add_user(nom: str, prenoms: str, email: str, password: str):
+    def add_user(nom: str, prenoms: str, pseudo: str, password: str):
         conn = get_connection_db()
         cur = conn.cursor()
-        cur.execute("INSERT INTO users (nom, prenoms, email, password) VALUES (?, ?, ?, ?)", (nom, prenoms, email, password))
+        cur.execute("INSERT INTO users (nom, prenoms, pseudo, password) VALUES (?, ?, ?, ?)", (nom, prenoms, pseudo, password))
         conn.commit()
         conn.close()
 
@@ -36,3 +36,12 @@ class UserModel:
         rows = cur.fetchall()
         conn.close()
         return [r for r in rows]
+
+    @staticmethod
+    def get_user_by_pseudo(self, _pseudo:str):
+        conn = get_connection_db()
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM users WHERE pseudo=?", _pseudo)
+        res = cur.fetchone()
+        conn.close()
+        return res

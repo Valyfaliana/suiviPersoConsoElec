@@ -122,23 +122,17 @@
     <string>S'inscrire</string>
    </property>
   </widget>
-  <widget class="QLabel" name="linkConnection">
+  <widget class="QPushButton" name="btnConnecter">
    <property name="geometry">
     <rect>
-     <x>360</x>
+     <x>390</x>
      <y>380</y>
-     <width>191</width>
-     <height>51</height>
+     <width>131</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;a href=&quot;connecter&quot;&gt;connecter ?&lt;/a&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignCenter</set>
-   </property>
-   <property name="openExternalLinks">
-    <bool>true</bool>
+    <string>se connecter ?</string>
    </property>
   </widget>
  </widget>

@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QDialog
 
-from app.ui.components.warningDlg import Ui_w_warningDlg
+from app.ui.components.dialog.warningDlg import Ui_w_warningDlg
 
 
 class WarningDialog(QDialog):

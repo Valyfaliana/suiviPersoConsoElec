@@ -94,11 +94,9 @@ class Ui_w_SignUpForm(object):
         self.btnInscription = QPushButton(w_SignUpForm)
         self.btnInscription.setObjectName(u"btnInscription")
         self.btnInscription.setGeometry(QRect(360, 340, 191, 26))
-        self.linkConnection = QLabel(w_SignUpForm)
-        self.linkConnection.setObjectName(u"linkConnection")
-        self.linkConnection.setGeometry(QRect(360, 380, 191, 51))
-        self.linkConnection.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.linkConnection.setOpenExternalLinks(True)
+        self.btnConnecter = QPushButton(w_SignUpForm)
+        self.btnConnecter.setObjectName(u"btnConnecter")
+        self.btnConnecter.setGeometry(QRect(390, 380, 131, 26))
 
         self.retranslateUi(w_SignUpForm)
 
@@ -113,6 +111,6 @@ class Ui_w_SignUpForm(object):
         self.passwordLabel.setText(QCoreApplication.translate("w_SignUpForm", u"Mot de passe :", None))
         self.password1Label.setText(QCoreApplication.translate("w_SignUpForm", u"Confirmer mot de passe : ", None))
         self.btnInscription.setText(QCoreApplication.translate("w_SignUpForm", u"S'inscrire", None))
-        self.linkConnection.setText(QCoreApplication.translate("w_SignUpForm", u"<html><head/><body><a href=\"connecter\">connecter ?</a></body></html>", None))
+        self.btnConnecter.setText(QCoreApplication.translate("w_SignUpForm", u"se connecter ?", None))
     # retranslateUi
 

@@ -9,6 +9,9 @@ class PageSignUp(QObject ,Ui_w_SignUpForm):
         super().__init__()
         self.widget = QWidget()
         self.setupUi(self.widget)
+        self.widget.setFixedSize(self.widget.size())
+
+        # Pour la creation d'un nouveau user
         self.btnInscription.clicked.connect(self._on_add_user)
 
     def _on_add_user(self):
