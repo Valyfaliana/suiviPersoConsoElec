@@ -38,10 +38,10 @@ class UserModel:
         return [r for r in rows]
 
     @staticmethod
-    def get_user_by_pseudo(self, _pseudo:str):
+    def get_user_by_pseudo(_pseudo:str):
         conn = get_connection_db()
         cur = conn.cursor()
-        cur.execute("SELECT * FROM users WHERE pseudo=?", _pseudo)
+        cur.execute("SELECT * FROM users WHERE pseudo=?", (_pseudo,))
         res = cur.fetchone()
         conn.close()
         return res
