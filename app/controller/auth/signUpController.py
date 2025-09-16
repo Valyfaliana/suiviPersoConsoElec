@@ -1,7 +1,7 @@
 from app.models.userModel import UserModel
+from app.ui.components.waringDialog import WarningDialog
 from app.ui.pages.pageSignUp import PageSignUp
 from app.utils.passwordHasher import hash_password
-
 
 class SignUpController:
     def __init__(self):
@@ -16,4 +16,5 @@ class SignUpController:
             self.model.add_user(nom, prenoms, pseudo, hash_password(password))
             print("User creer avec succes.")
         else:
-            print("Mot de passe non confirmer.")
+            dlg = WarningDialog("Mot de passe non confirmer.", self.view)
+            dlg.exec()
