@@ -1,5 +1,6 @@
 from app.controller.usages.ajoutUsageController import AjoutUsageController
 from app.models.appareilModel import AppareilModel
+from app.ui.components.dialog.waringDialog import WarningDialog
 from app.ui.pages.pageListeAppareils import PageListeAppareils
 from PySide6.QtSql import QSqlTableModel
 from PySide6.QtCore import QSortFilterProxyModel
@@ -61,6 +62,13 @@ class ListeAppareilsController:
 
         # Recuperer les elements selectionnee
         selected = self.page.listeAppareils.selectionModel().selectedRows()
+
+        # Si il n'y a pas de selection
+        if len(selected) <= 0:
+            dlg = WarningDialog("Veuillez selectionner un element.", self.mainWin)
+            dlg.exec()
+            return
+
         # Recuperer le proxy connect au tableview
         proxy = self.page.listeAppareils.model()
         for index in selected:
@@ -79,7 +87,11 @@ class ListeAppareilsController:
 
         # Recuperer les elements selectionnee
         selected = self.page.listeAppareils.selectionModel().selectedRows()
+
+        # Si il n'y a pas de selection
         if len(selected) <= 0:
+            dlg = WarningDialog("Veuillez selectionner un element.", self.mainWin)
+            dlg.exec()
             return
 
         # Recuperer le proxy connect au tableview
