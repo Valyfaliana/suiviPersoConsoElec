@@ -24,7 +24,7 @@ class Ui_w_listeUsage(object):
     def setupUi(self, w_listeUsage):
         if not w_listeUsage.objectName():
             w_listeUsage.setObjectName(u"w_listeUsage")
-        w_listeUsage.resize(561, 408)
+        w_listeUsage.resize(561, 441)
         w_listeUsage.setStyleSheet(u"background-color: rgb(213, 212, 210);\n"
 "color: rgb(0, 0, 0);")
         self.listeUsage = QTableView(w_listeUsage)
@@ -64,6 +64,13 @@ class Ui_w_listeUsage(object):
         self.label_3.setGeometry(QRect(0, 0, 41, 41))
         self.label_3.setPixmap(QPixmap(u":/Main/icon/mainLog.png"))
         self.label_3.setScaledContents(True)
+        self.btnSupprimer = QPushButton(w_listeUsage)
+        self.btnSupprimer.setObjectName(u"btnSupprimer")
+        self.btnSupprimer.setGeometry(QRect(230, 380, 111, 41))
+        self.btnSupprimer.setStyleSheet(u"background-color: rgb(170, 0, 0);\n"
+"color: rgb(255, 255, 255);")
+        icon2 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.EditDelete))
+        self.btnSupprimer.setIcon(icon2)
 
         self.retranslateUi(w_listeUsage)
 
@@ -76,5 +83,6 @@ class Ui_w_listeUsage(object):
         self.btnQuitter.setText(QCoreApplication.translate("w_listeUsage", u"Deconnecter", None))
         self.btnListeAppareils.setText(QCoreApplication.translate("w_listeUsage", u"Appareils", None))
         self.label_3.setText("")
+        self.btnSupprimer.setText(QCoreApplication.translate("w_listeUsage", u"Supprimer", None))
     # retranslateUi
 
