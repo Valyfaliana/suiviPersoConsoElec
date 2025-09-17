@@ -35,7 +35,7 @@ class AppareilModel:
     def supprimer_appareil(_id:int):
         conn = get_connection_db()
         cur = conn.cursor()
-        cur.execute("DELETE FROM appareils WHERE user_id = ?", (_id,))
+        cur.execute("DELETE FROM appareils WHERE id = ?", (_id,))
         conn.commit()
         conn.close()
 

@@ -1,3 +1,4 @@
+from app.controller.usages.ajoutUsageController import AjoutUsageController
 from app.models.appareilModel import AppareilModel
 from app.ui.pages.pageListeAppareils import PageListeAppareils
 from PySide6.QtSql import QSqlDatabase, QSqlQueryModel, QSqlTableModel, QSqlQuery
@@ -20,6 +21,9 @@ class ListeAppareilsController:
 
         # Btn suppression appareils
         self.page.btnSupprimer.clicked.connect(self.supprimer_appareils)
+
+        # Btn utilisation appareils
+        self.page.btnUtiliser.clicked.connect(self.utiliser_appareil)
 
     def refresh_liste_appareils(self):
         # db = QSqlDatabase.database()
@@ -60,3 +64,25 @@ class ListeAppareilsController:
             model.removeRow(source_index.row())
 
         self.refresh_liste_appareils()
+
+    def utiliser_appareil(self):
+        model = QSqlTableModel()
+        model.setTable("appareils")
+        model.select()
+
+        # Recuperer les elements selectionnee
+        selected = self.page.listeAppareils.selectionModel().selectedRows()
+        if len(selected) <= 0:
+            return
+
+        # Recuperer le proxy connect au tableview
+        proxy = self.page.listeAppareils.model()
+
+        # Conversion index proxy -> index modèle source
+        source_index = proxy.mapToSource(selected[0])
+        record = model.record(source_index.row()) # recuperer les data de l'appareil
+
+        # Afficher la boite de dialog pour l'ajout de usage
+        usage_controller = AjoutUsageController(record, self.mainWin)
+        usage_controller.view.exec()
+
