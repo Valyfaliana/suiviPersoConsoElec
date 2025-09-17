@@ -15,24 +15,25 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDoubleSpinBox, QFormLayout, QHeaderView,
-    QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QTableView, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QDoubleSpinBox, QFormLayout,
+    QHeaderView, QLabel, QLineEdit, QPushButton,
+    QSizePolicy, QTableView, QWidget)
 
 class Ui_w_listeAppareils(object):
     def setupUi(self, w_listeAppareils):
         if not w_listeAppareils.objectName():
             w_listeAppareils.setObjectName(u"w_listeAppareils")
-        w_listeAppareils.resize(579, 459)
+        w_listeAppareils.resize(565, 519)
         self.listeAppareils = QTableView(w_listeAppareils)
         self.listeAppareils.setObjectName(u"listeAppareils")
         self.listeAppareils.setGeometry(QRect(0, 40, 561, 211))
-        self.listeAppareils.setGridStyle(Qt.PenStyle.SolidLine)
+        self.listeAppareils.setEditTriggers(QAbstractItemView.EditTrigger.AnyKeyPressed|QAbstractItemView.EditTrigger.DoubleClicked|QAbstractItemView.EditTrigger.EditKeyPressed)
+        self.listeAppareils.setGridStyle(Qt.PenStyle.DashLine)
         self.listeAppareils.setSortingEnabled(True)
         self.listeAppareils.horizontalHeader().setCascadingSectionResizes(False)
         self.formLayoutWidget = QWidget(w_listeAppareils)
         self.formLayoutWidget.setObjectName(u"formLayoutWidget")
-        self.formLayoutWidget.setGeometry(QRect(10, 270, 551, 141))
+        self.formLayoutWidget.setGeometry(QRect(10, 340, 551, 141))
         self.formLayout = QFormLayout(self.formLayoutWidget)
         self.formLayout.setObjectName(u"formLayout")
         self.formLayout.setContentsMargins(0, 0, 0, 0)
@@ -67,6 +68,12 @@ class Ui_w_listeAppareils(object):
         self.btnQuitter = QPushButton(w_listeAppareils)
         self.btnQuitter.setObjectName(u"btnQuitter")
         self.btnQuitter.setGeometry(QRect(390, 0, 181, 31))
+        self.btnSupprimer = QPushButton(w_listeAppareils)
+        self.btnSupprimer.setObjectName(u"btnSupprimer")
+        self.btnSupprimer.setGeometry(QRect(330, 290, 94, 26))
+        self.btnUtiliser = QPushButton(w_listeAppareils)
+        self.btnUtiliser.setObjectName(u"btnUtiliser")
+        self.btnUtiliser.setGeometry(QRect(150, 290, 94, 26))
 
         self.retranslateUi(w_listeAppareils)
 
@@ -79,5 +86,7 @@ class Ui_w_listeAppareils(object):
         self.puissanceConsommerLabel.setText(QCoreApplication.translate("w_listeAppareils", u"Puissance consommer :", None))
         self.btnAjouterAppareil.setText(QCoreApplication.translate("w_listeAppareils", u"Ajouter", None))
         self.btnQuitter.setText(QCoreApplication.translate("w_listeAppareils", u"Quitter", None))
+        self.btnSupprimer.setText(QCoreApplication.translate("w_listeAppareils", u"supprimer", None))
+        self.btnUtiliser.setText(QCoreApplication.translate("w_listeAppareils", u"Utiliser", None))
     # retranslateUi
 

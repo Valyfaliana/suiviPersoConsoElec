@@ -30,7 +30,15 @@ class AppareilModel:
         cur = conn.cursor()
         cur.execute("INSERT INTO appareils (nom, puissance, user_id) VALUES (?, ?, ?)", (nom, puissance, user_id))
         conn.commit()
+
+    @staticmethod
+    def supprimer_appareil(_id:int):
+        conn = get_connection_db()
+        cur = conn.cursor()
+        cur.execute("DELETE FROM appareils WHERE user_id = ?", (_id,))
+        conn.commit()
         conn.close()
+
 
     @staticmethod
     def get_appareils_by_user_id(self, user_id:int):

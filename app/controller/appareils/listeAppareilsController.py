@@ -1,6 +1,7 @@
 from app.models.appareilModel import AppareilModel
 from app.ui.pages.pageListeAppareils import PageListeAppareils
-from PySide6.QtSql import QSqlDatabase, QSqlQueryModel
+from PySide6.QtSql import QSqlDatabase, QSqlQueryModel, QSqlTableModel, QSqlQuery
+from PySide6.QtCore import QSortFilterProxyModel
 
 class ListeAppareilsController:
     def __init__(self, mainWin):
@@ -17,20 +18,45 @@ class ListeAppareilsController:
         # Btn ajouter appareil
         self.page.ajout_appareil_signal.connect(self.do_ajout_appareil)
 
+        # Btn suppression appareils
+        self.page.btnSupprimer.clicked.connect(self.supprimer_appareils)
+
     def refresh_liste_appareils(self):
-        db = QSqlDatabase.database()
+        # db = QSqlDatabase.database()
 
         # Recuperer les data de la base de donnee
-        model = QSqlQueryModel()
-        model.setQuery(f"SELECT nom,puissance FROM appareils WHERE user_id={self.mainWin.user["id"]}", db)
+        model = QSqlTableModel()
+        model.setTable("appareils")
+        model.setFilter(f"user_id={self.mainWin.user["id"]}")
+        model.select()
 
-        if model.lastError().isValid():
-            print("Erreur SQL :", model.lastError().text())
+        # Proxy pour tri/filtre
+        proxy = QSortFilterProxyModel()
+        proxy.setSourceModel(model)
 
         # Relier le tableau aux donnees de la base de donnee
-        self.page.listeAppareils.setModel(model)
+        self.page.listeAppareils.setModel(proxy)
+
+        # Cacher les colonnes inutiles
+        self.page.listeAppareils.setColumnHidden(0, True) # colonne des id
+        self.page.listeAppareils.setColumnHidden(3, True) # colonne des user_id
 
     def do_ajout_appareil(self, nom:str, puissance:float):
         self.model.add_appareil(nom, puissance, self.mainWin.user["id"])
         self.refresh_liste_appareils()
 
+    def supprimer_appareils(self):
+        model = QSqlTableModel()
+        model.setTable("appareils")
+        model.select()
+
+        # Recuperer les elements selectionnee
+        selected = self.page.listeAppareils.selectionModel().selectedRows()
+        # Recuperer le proxy connect au tableview
+        proxy = self.page.listeAppareils.model()
+        for index in selected:
+            # Conversion index proxy -> index modèle source
+            source_index = proxy.mapToSource(index)
+            model.removeRow(source_index.row())
+
+        self.refresh_liste_appareils()

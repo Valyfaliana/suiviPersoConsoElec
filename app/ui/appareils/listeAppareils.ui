@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>570</width>
-    <height>438</height>
+    <width>565</width>
+    <height>519</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,8 +22,11 @@
      <height>211</height>
     </rect>
    </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::EditTrigger::AnyKeyPressed|QAbstractItemView::EditTrigger::DoubleClicked|QAbstractItemView::EditTrigger::EditKeyPressed</set>
+   </property>
    <property name="gridStyle">
-    <enum>Qt::PenStyle::SolidLine</enum>
+    <enum>Qt::PenStyle::DashLine</enum>
    </property>
    <property name="sortingEnabled">
     <bool>true</bool>
@@ -36,7 +39,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>270</y>
+     <y>340</y>
      <width>551</width>
      <height>141</height>
     </rect>
@@ -92,6 +95,32 @@
    </property>
    <property name="text">
     <string>Quitter</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnSupprimer">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>290</y>
+     <width>94</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>supprimer</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnUtiliser">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>290</y>
+     <width>94</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Utiliser</string>
    </property>
   </widget>
  </widget>
