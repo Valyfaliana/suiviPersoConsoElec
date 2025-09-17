@@ -3,10 +3,12 @@ from PySide6.QtWidgets import QMainWindow, QStackedWidget, QApplication
 from app.controller.appareils.listeAppareilsController import ListeAppareilsController
 from app.controller.auth.signInController import SignInController
 from app.controller.auth.signUpController import SignUpController
+from app.controller.usages.listeUsageController import ListeUsageController
 
 PAGE_CONNEXION = 0
 PAGE_INSCRIPTION = 1
 PAGE_LISTE_APPAREILS = 2
+PAGE_LISTE_USAGES = 3
 
 class MainWindow(QMainWindow):
     user = []
@@ -19,11 +21,13 @@ class MainWindow(QMainWindow):
         self.pageSignIn = SignInController(self)
         self.pageSignUp = SignUpController(self.basculer_page)
         self.pageListeAppareils = ListeAppareilsController(self)
+        self.pageListeUsages = ListeUsageController(self)
 
         # Ajouter les pages
         self.stack.addWidget(self.pageSignIn.view) # 0
         self.stack.addWidget(self.pageSignUp.view) # 1
         self.stack.addWidget(self.pageListeAppareils.view) # 2
+        self.stack.addWidget(self.pageListeUsages.view) # 3
 
         self.setCentralWidget(self.stack)
 
@@ -41,3 +45,7 @@ class MainWindow(QMainWindow):
         # Refresh liste appareils si on va vers page liste appareils
         if index == PAGE_LISTE_APPAREILS:
             self.pageListeAppareils.refresh_liste_appareils()
+
+        # Refresh liste usages si on va vers page liste usages
+        if index == PAGE_LISTE_USAGES:
+            self.pageListeUsages.refresh_liste_usages()

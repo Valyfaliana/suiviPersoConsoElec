@@ -1,12 +1,12 @@
 from app.controller.usages.ajoutUsageController import AjoutUsageController
 from app.models.appareilModel import AppareilModel
 from app.ui.pages.pageListeAppareils import PageListeAppareils
-from PySide6.QtSql import QSqlDatabase, QSqlQueryModel, QSqlTableModel, QSqlQuery
+from PySide6.QtSql import QSqlTableModel
 from PySide6.QtCore import QSortFilterProxyModel
 
 class ListeAppareilsController:
     def __init__(self, mainWin):
-        from app.main_window import PAGE_CONNEXION
+        from app.main_window import PAGE_CONNEXION, PAGE_LISTE_USAGES
         self.mainWin = mainWin
 
         self.page = PageListeAppareils()
@@ -15,6 +15,9 @@ class ListeAppareilsController:
 
         # Quand on clique sur le btn quitte
         self.page.btnQuitter.clicked.connect(lambda: mainWin.basculer_page("Connexion", PAGE_CONNEXION))
+
+        # Quand on clique sur le btn consommation
+        self.page.btnListeUsages.clicked.connect(lambda: mainWin.basculer_page("Liste consommation", PAGE_LISTE_USAGES))
 
         # Btn ajouter appareil
         self.page.ajout_appareil_signal.connect(self.do_ajout_appareil)
@@ -26,8 +29,6 @@ class ListeAppareilsController:
         self.page.btnUtiliser.clicked.connect(self.utiliser_appareil)
 
     def refresh_liste_appareils(self):
-        # db = QSqlDatabase.database()
-
         # Recuperer les data de la base de donnee
         model = QSqlTableModel()
         model.setTable("appareils")
@@ -66,6 +67,8 @@ class ListeAppareilsController:
         self.refresh_liste_appareils()
 
     def utiliser_appareil(self):
+        from app.main_window import PAGE_LISTE_USAGES
+
         model = QSqlTableModel()
         model.setTable("appareils")
         model.select()
@@ -85,4 +88,7 @@ class ListeAppareilsController:
         # Afficher la boite de dialog pour l'ajout de usage
         usage_controller = AjoutUsageController(record, self.mainWin)
         usage_controller.view.exec()
+
+        # Basculer a la page liste usage
+        self.mainWin.basculer_page("Liste consommation", PAGE_LISTE_USAGES)
 

@@ -74,6 +74,9 @@ class Ui_w_listeAppareils(object):
         self.btnUtiliser = QPushButton(w_listeAppareils)
         self.btnUtiliser.setObjectName(u"btnUtiliser")
         self.btnUtiliser.setGeometry(QRect(150, 290, 94, 26))
+        self.btnListeUsages = QPushButton(w_listeAppareils)
+        self.btnListeUsages.setObjectName(u"btnListeUsages")
+        self.btnListeUsages.setGeometry(QRect(0, 0, 141, 31))
 
         self.retranslateUi(w_listeAppareils)
 
@@ -88,5 +91,6 @@ class Ui_w_listeAppareils(object):
         self.btnQuitter.setText(QCoreApplication.translate("w_listeAppareils", u"Quitter", None))
         self.btnSupprimer.setText(QCoreApplication.translate("w_listeAppareils", u"supprimer", None))
         self.btnUtiliser.setText(QCoreApplication.translate("w_listeAppareils", u"Utiliser", None))
+        self.btnListeUsages.setText(QCoreApplication.translate("w_listeAppareils", u"Consommation", None))
     # retranslateUi
 
