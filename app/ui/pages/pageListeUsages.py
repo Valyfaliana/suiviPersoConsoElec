@@ -12,13 +12,14 @@ class PageListeUsages(QObject ,Ui_w_listeUsage):
 
         # Styliser les headers du tableview
         self.listeUsage.horizontalHeader().setStyleSheet("""
-                    QHeaderView::section {
-                        background-color: black;
-                        color: white;
-                        border: 1px solid #555;
-                        font-weight: bold;
-                    }
-                """)
+            QHeaderView::section {
+                background-color: #2698cf;
+                color: white;
+                border: 1px solid #555;
+                font-weight: bold;
+                border-left: none;
+            }
+        """)
 
         # Styliser le vertical header (numéros de ligne)
         self.listeUsage.verticalHeader().setStyleSheet("""

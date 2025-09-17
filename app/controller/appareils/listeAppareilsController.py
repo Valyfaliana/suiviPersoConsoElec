@@ -3,6 +3,7 @@ from app.models.appareilModel import AppareilModel
 from app.ui.pages.pageListeAppareils import PageListeAppareils
 from PySide6.QtSql import QSqlTableModel
 from PySide6.QtCore import QSortFilterProxyModel
+from PySide6.QtWidgets import QDialog
 
 class ListeAppareilsController:
     def __init__(self, mainWin):
@@ -90,8 +91,9 @@ class ListeAppareilsController:
 
         # Afficher la boite de dialog pour l'ajout de usage
         usage_controller = AjoutUsageController(record, self.mainWin)
-        usage_controller.view.exec()
+        reponse = usage_controller.view.exec()
 
         # Basculer a la page liste usage
-        self.mainWin.basculer_page("Liste consommation", PAGE_LISTE_USAGES)
+        if reponse == QDialog.Accepted:
+            self.mainWin.basculer_page("Liste consommation", PAGE_LISTE_USAGES)
 
