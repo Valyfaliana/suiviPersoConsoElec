@@ -26,6 +26,7 @@ class Ui_w_listeUsage(object):
         self.listeUsage = QTableView(w_listeUsage)
         self.listeUsage.setObjectName(u"listeUsage")
         self.listeUsage.setGeometry(QRect(20, 170, 531, 231))
+        self.listeUsage.setSortingEnabled(True)
         self.label = QLabel(w_listeUsage)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(80, 70, 411, 71))
