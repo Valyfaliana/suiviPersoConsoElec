@@ -19,6 +19,11 @@ class SignUpController:
     def _add_user(self, nom:str, prenoms:str, pseudo:str, password:str, password1:str):
         if password == password1:
             self.model.add_user(nom, prenoms, pseudo, hash_password(password))
+            self.page.nomLineEdit.clear()
+            self.page.prenomsLineEdit.clear()
+            self.page.pseudoLineEdit.clear()
+            self.page.passwordLineEdit.clear()
+            self.page.passwordLineEdit_2.clear()
             print("User creer avec succes.")
             self.page.btnConnecter.click()
         else:

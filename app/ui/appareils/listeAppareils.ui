@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>561</width>
-    <height>547</height>
+    <height>572</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -134,7 +134,7 @@ color: rgb(255, 255, 255);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(195, 0, 0);
+    <string notr="true">background-color: rgb(170, 0, 0);
 color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
@@ -253,6 +253,19 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>540</y>
+     <width>531</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>*Astuce : cliquer sur le numero de ligne pour selectionner un element</string>
    </property>
   </widget>
  </widget>

@@ -66,7 +66,7 @@ class Ui_w_listeUsage(object):
         self.label_3.setScaledContents(True)
         self.btnSupprimer = QPushButton(w_listeUsage)
         self.btnSupprimer.setObjectName(u"btnSupprimer")
-        self.btnSupprimer.setGeometry(QRect(230, 380, 111, 41))
+        self.btnSupprimer.setGeometry(QRect(230, 380, 111, 31))
         self.btnSupprimer.setStyleSheet(u"background-color: rgb(170, 0, 0);\n"
 "color: rgb(255, 255, 255);")
         icon2 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.EditDelete))

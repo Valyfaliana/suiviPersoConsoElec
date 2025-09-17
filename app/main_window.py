@@ -1,4 +1,6 @@
 from PySide6.QtWidgets import QMainWindow, QStackedWidget, QApplication
+from PySide6.QtGui import QIcon
+from PySide6.QtCore import QSize
 
 from app.controller.appareils.listeAppareilsController import ListeAppareilsController
 from app.controller.auth.signInController import SignInController
@@ -16,6 +18,14 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.stack = QStackedWidget()
+
+        # Definir l'icon
+        icon = QIcon()
+        icon.addFile(u":/Main/icon/mainLog.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.setWindowIcon(icon)
+
+        # Definier titre
+        self.setWindowTitle("EcoWatt")
 
         # Definir les pages
         self.pageSignIn = SignInController(self)
@@ -38,7 +48,7 @@ class MainWindow(QMainWindow):
 
     def basculer_page(self, titre, index):
         self.stack.setCurrentIndex(index)
-        self.setWindowTitle(titre)
+        # self.setWindowTitle(titre)
         current = self.stack.currentWidget()
         self.setFixedSize(current.size())
 

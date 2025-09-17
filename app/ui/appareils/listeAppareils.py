@@ -24,7 +24,7 @@ class Ui_w_listeAppareils(object):
     def setupUi(self, w_listeAppareils):
         if not w_listeAppareils.objectName():
             w_listeAppareils.setObjectName(u"w_listeAppareils")
-        w_listeAppareils.resize(561, 547)
+        w_listeAppareils.resize(561, 572)
         w_listeAppareils.setStyleSheet(u"background-color: rgb(213, 212, 210);\n"
 "color: rgb(0, 0, 0);")
         self.listeAppareils = QTableView(w_listeAppareils)
@@ -83,7 +83,7 @@ class Ui_w_listeAppareils(object):
         self.btnSupprimer = QPushButton(w_listeAppareils)
         self.btnSupprimer.setObjectName(u"btnSupprimer")
         self.btnSupprimer.setGeometry(QRect(310, 380, 141, 31))
-        self.btnSupprimer.setStyleSheet(u"background-color: rgb(195, 0, 0);\n"
+        self.btnSupprimer.setStyleSheet(u"background-color: rgb(170, 0, 0);\n"
 "color: rgb(255, 255, 255);")
         icon1 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.EditDelete))
         self.btnSupprimer.setIcon(icon1)
@@ -127,6 +127,9 @@ class Ui_w_listeAppareils(object):
         self.label_3.setGeometry(QRect(0, 0, 41, 41))
         self.label_3.setPixmap(QPixmap(u":/Main/icon/mainLog.png"))
         self.label_3.setScaledContents(True)
+        self.label = QLabel(w_listeAppareils)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(20, 540, 531, 21))
 
         self.retranslateUi(w_listeAppareils)
 
@@ -147,5 +150,6 @@ class Ui_w_listeAppareils(object):
         self.btnAjouterAppareil.setText(QCoreApplication.translate("w_listeAppareils", u"Ajouter", None))
         self.labelBienvenue.setText(QCoreApplication.translate("w_listeAppareils", u"<html><head/><body><p>Texte</p></body></html>", None))
         self.label_3.setText("")
+        self.label.setText(QCoreApplication.translate("w_listeAppareils", u"*Astuce : cliquer sur le numero de ligne pour selectionner un element", None))
     # retranslateUi
 

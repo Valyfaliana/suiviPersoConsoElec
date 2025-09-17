@@ -27,6 +27,9 @@ class SignInController:
         if user:
             if verify_password(user["password"], password):
                 self.mainWin.user = user
+                # reinitialiser les champs
+                self.page.pseudoLineEdit.clear()
+                self.page.motDePasseLineEdit.clear()
                 self.mainWin.basculer_page("Liste appareils de l'utilisateur", PAGE_LISTE_APPAREILS)
             else:
                 dlg = WarningDialog("Mot de passe incorrect.", self.view)
