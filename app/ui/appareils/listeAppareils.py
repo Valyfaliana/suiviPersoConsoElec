@@ -18,22 +18,27 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QDoubleSpinBox, QFormLayout,
     QHeaderView, QLabel, QLineEdit, QPushButton,
     QSizePolicy, QTableView, QWidget)
+import Icons_rc
 
 class Ui_w_listeAppareils(object):
     def setupUi(self, w_listeAppareils):
         if not w_listeAppareils.objectName():
             w_listeAppareils.setObjectName(u"w_listeAppareils")
-        w_listeAppareils.resize(565, 519)
+        w_listeAppareils.resize(561, 516)
+        w_listeAppareils.setStyleSheet(u"background-color: rgb(213, 212, 210);\n"
+"color: rgb(0, 0, 0);")
         self.listeAppareils = QTableView(w_listeAppareils)
         self.listeAppareils.setObjectName(u"listeAppareils")
-        self.listeAppareils.setGeometry(QRect(0, 40, 561, 211))
+        self.listeAppareils.setGeometry(QRect(20, 130, 521, 211))
+        self.listeAppareils.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
+"color: rgb(255, 255, 255);")
         self.listeAppareils.setEditTriggers(QAbstractItemView.EditTrigger.AnyKeyPressed|QAbstractItemView.EditTrigger.DoubleClicked|QAbstractItemView.EditTrigger.EditKeyPressed)
         self.listeAppareils.setGridStyle(Qt.PenStyle.DashLine)
         self.listeAppareils.setSortingEnabled(True)
         self.listeAppareils.horizontalHeader().setCascadingSectionResizes(False)
         self.formLayoutWidget = QWidget(w_listeAppareils)
         self.formLayoutWidget.setObjectName(u"formLayoutWidget")
-        self.formLayoutWidget.setGeometry(QRect(10, 340, 551, 141))
+        self.formLayoutWidget.setGeometry(QRect(120, 410, 331, 61))
         self.formLayout = QFormLayout(self.formLayoutWidget)
         self.formLayout.setObjectName(u"formLayout")
         self.formLayout.setContentsMargins(0, 0, 0, 0)
@@ -60,23 +65,60 @@ class Ui_w_listeAppareils(object):
 
         self.formLayout.setWidget(1, QFormLayout.ItemRole.FieldRole, self.puissanceConsommerDoubleSpinBox)
 
-        self.btnAjouterAppareil = QPushButton(self.formLayoutWidget)
-        self.btnAjouterAppareil.setObjectName(u"btnAjouterAppareil")
-
-        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole, self.btnAjouterAppareil)
-
         self.btnQuitter = QPushButton(w_listeAppareils)
         self.btnQuitter.setObjectName(u"btnQuitter")
-        self.btnQuitter.setGeometry(QRect(390, 0, 181, 31))
+        self.btnQuitter.setGeometry(QRect(450, 0, 111, 41))
+        self.btnQuitter.setStyleSheet(u"background-color: rgb(170, 0, 0);\n"
+"color: rgb(255, 255, 255);")
+        icon = QIcon()
+        icon.addFile(u":/utils/icon/disruption (1).png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnQuitter.setIcon(icon)
         self.btnSupprimer = QPushButton(w_listeAppareils)
         self.btnSupprimer.setObjectName(u"btnSupprimer")
-        self.btnSupprimer.setGeometry(QRect(330, 290, 94, 26))
+        self.btnSupprimer.setGeometry(QRect(310, 360, 141, 31))
+        self.btnSupprimer.setStyleSheet(u"background-color: rgb(195, 0, 0);\n"
+"color: rgb(255, 255, 255);")
+        icon1 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.EditDelete))
+        self.btnSupprimer.setIcon(icon1)
         self.btnUtiliser = QPushButton(w_listeAppareils)
         self.btnUtiliser.setObjectName(u"btnUtiliser")
-        self.btnUtiliser.setGeometry(QRect(150, 290, 94, 26))
+        self.btnUtiliser.setGeometry(QRect(120, 360, 141, 31))
+        self.btnUtiliser.setStyleSheet(u"background-color: rgb(102, 162, 60);\n"
+"color: rgb(255, 255, 255);")
+        icon2 = QIcon()
+        icon2.addFile(u":/utils/icon/clock (2).png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnUtiliser.setIcon(icon2)
         self.btnListeUsages = QPushButton(w_listeAppareils)
         self.btnListeUsages.setObjectName(u"btnListeUsages")
-        self.btnListeUsages.setGeometry(QRect(0, 0, 141, 31))
+        self.btnListeUsages.setGeometry(QRect(320, 0, 121, 41))
+        self.btnListeUsages.setStyleSheet(u"background-color: rgb(102, 162, 60);\n"
+"color: rgb(255, 255, 255);")
+        icon3 = QIcon()
+        icon3.addFile(u":/utils/icon/responsible-consumption (1).png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnListeUsages.setIcon(icon3)
+        self.btnAjouterAppareil = QPushButton(w_listeAppareils)
+        self.btnAjouterAppareil.setObjectName(u"btnAjouterAppareil")
+        self.btnAjouterAppareil.setGeometry(QRect(220, 480, 131, 31))
+        font = QFont()
+        font.setBold(True)
+        self.btnAjouterAppareil.setFont(font)
+        self.btnAjouterAppareil.setStyleSheet(u"background-color: rgb(38, 152, 207);\n"
+"color: rgb(255, 255, 255);")
+        icon4 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.ListAdd))
+        self.btnAjouterAppareil.setIcon(icon4)
+        self.labelBienvenue = QLabel(w_listeAppareils)
+        self.labelBienvenue.setObjectName(u"labelBienvenue")
+        self.labelBienvenue.setGeometry(QRect(130, 80, 311, 41))
+        font1 = QFont()
+        font1.setPointSize(18)
+        font1.setBold(True)
+        self.labelBienvenue.setFont(font1)
+        self.labelBienvenue.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.label_3 = QLabel(w_listeAppareils)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(0, 0, 41, 41))
+        self.label_3.setPixmap(QPixmap(u":/Main/icon/mainLog.png"))
+        self.label_3.setScaledContents(True)
 
         self.retranslateUi(w_listeAppareils)
 
@@ -87,10 +129,12 @@ class Ui_w_listeAppareils(object):
         w_listeAppareils.setWindowTitle(QCoreApplication.translate("w_listeAppareils", u"Liste des appareils de l'utilisateur", None))
         self.nomAppareilLabel.setText(QCoreApplication.translate("w_listeAppareils", u"Nom appareil :", None))
         self.puissanceConsommerLabel.setText(QCoreApplication.translate("w_listeAppareils", u"Puissance consommer :", None))
-        self.btnAjouterAppareil.setText(QCoreApplication.translate("w_listeAppareils", u"Ajouter", None))
-        self.btnQuitter.setText(QCoreApplication.translate("w_listeAppareils", u"Quitter", None))
+        self.btnQuitter.setText(QCoreApplication.translate("w_listeAppareils", u"Deconnecter", None))
         self.btnSupprimer.setText(QCoreApplication.translate("w_listeAppareils", u"supprimer", None))
         self.btnUtiliser.setText(QCoreApplication.translate("w_listeAppareils", u"Utiliser", None))
         self.btnListeUsages.setText(QCoreApplication.translate("w_listeAppareils", u"Consommation", None))
+        self.btnAjouterAppareil.setText(QCoreApplication.translate("w_listeAppareils", u"Ajouter", None))
+        self.labelBienvenue.setText(QCoreApplication.translate("w_listeAppareils", u"<html><head/><body><p>Texte</p></body></html>", None))
+        self.label_3.setText("")
     # retranslateUi
 

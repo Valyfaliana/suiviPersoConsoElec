@@ -6,21 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>565</width>
-    <height>519</height>
+    <width>561</width>
+    <height>516</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Liste des appareils de l'utilisateur</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(213, 212, 210);
+color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QTableView" name="listeAppareils">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>40</y>
-     <width>561</width>
+     <x>20</x>
+     <y>130</y>
+     <width>521</width>
      <height>211</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="editTriggers">
     <set>QAbstractItemView::EditTrigger::AnyKeyPressed|QAbstractItemView::EditTrigger::DoubleClicked|QAbstractItemView::EditTrigger::EditKeyPressed</set>
@@ -38,10 +46,10 @@
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>340</y>
-     <width>551</width>
-     <height>141</height>
+     <x>120</x>
+     <y>410</y>
+     <width>331</width>
+     <height>61</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -75,68 +83,160 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QPushButton" name="btnAjouterAppareil">
-      <property name="text">
-       <string>Ajouter</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QPushButton" name="btnQuitter">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>450</x>
      <y>0</y>
-     <width>181</width>
-     <height>31</height>
+     <width>111</width>
+     <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(170, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
    <property name="text">
-    <string>Quitter</string>
+    <string>Deconnecter</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../../resources/Icons.qrc">
+     <normaloff>:/utils/icon/disruption (1).png</normaloff>:/utils/icon/disruption (1).png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btnSupprimer">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>290</y>
-     <width>94</width>
-     <height>26</height>
+     <x>310</x>
+     <y>360</y>
+     <width>141</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(195, 0, 0);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>supprimer</string>
+   </property>
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::EditDelete"/>
    </property>
   </widget>
   <widget class="QPushButton" name="btnUtiliser">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>290</y>
-     <width>94</width>
-     <height>26</height>
+     <x>120</x>
+     <y>360</y>
+     <width>141</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(102, 162, 60);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Utiliser</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../../resources/Icons.qrc">
+     <normaloff>:/utils/icon/clock (2).png</normaloff>:/utils/icon/clock (2).png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btnListeUsages">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>320</x>
      <y>0</y>
-     <width>141</width>
-     <height>31</height>
+     <width>121</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(102, 162, 60);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Consommation</string>
    </property>
+   <property name="icon">
+    <iconset resource="../../resources/Icons.qrc">
+     <normaloff>:/utils/icon/responsible-consumption (1).png</normaloff>:/utils/icon/responsible-consumption (1).png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnAjouterAppareil">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>480</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(38, 152, 207);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Ajouter</string>
+   </property>
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::ListAdd"/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelBienvenue">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>80</y>
+     <width>311</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Texte&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../resources/Icons.qrc">:/Main/icon/mainLog.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources/Icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -29,6 +29,9 @@ class ListeAppareilsController:
         self.page.btnUtiliser.clicked.connect(self.utiliser_appareil)
 
     def refresh_liste_appareils(self):
+        # Modifier label bienvenue
+        self.page.labelBienvenue.setText(f"Bienvenue {self.mainWin.user["nom"]} !!")
+
         # Recuperer les data de la base de donnee
         model = QSqlTableModel()
         model.setTable("appareils")
