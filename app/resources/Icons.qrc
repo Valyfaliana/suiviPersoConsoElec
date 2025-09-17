@@ -3,6 +3,7 @@
     <file>icon/mainLog.png</file>
   </qresource>
   <qresource prefix="utils">
+    <file>icon/crisis.png</file>
     <file>icon/agreement.png</file>
     <file>icon/clock (2).png</file>
     <file>icon/disruption (1).png</file>

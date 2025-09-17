@@ -7,14 +7,18 @@
     <x>0</x>
     <y>0</y>
     <width>377</width>
-    <height>193</height>
+    <height>187</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Avertissement</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../resources/Icons.qrc">
+    <normaloff>:/utils/icon/crisis.png</normaloff>:/utils/icon/crisis.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(237, 51, 59);</string>
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
@@ -24,6 +28,9 @@
      <width>341</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(147, 147, 145);</string>
    </property>
    <property name="orientation">
     <enum>Qt::Orientation::Horizontal</enum>
@@ -39,9 +46,9 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>40</y>
-     <width>401</width>
-     <height>81</height>
+     <y>30</y>
+     <width>377</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="font">
@@ -71,7 +78,9 @@ color: rgb(0, 0, 0);</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../resources/Icons.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
