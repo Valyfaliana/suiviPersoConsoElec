@@ -24,21 +24,28 @@ class Ui_w_listeAppareils(object):
     def setupUi(self, w_listeAppareils):
         if not w_listeAppareils.objectName():
             w_listeAppareils.setObjectName(u"w_listeAppareils")
-        w_listeAppareils.resize(561, 516)
+        w_listeAppareils.resize(561, 547)
         w_listeAppareils.setStyleSheet(u"background-color: rgb(213, 212, 210);\n"
 "color: rgb(0, 0, 0);")
         self.listeAppareils = QTableView(w_listeAppareils)
         self.listeAppareils.setObjectName(u"listeAppareils")
-        self.listeAppareils.setGeometry(QRect(20, 130, 521, 211))
-        self.listeAppareils.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
-"color: rgb(255, 255, 255);")
+        self.listeAppareils.setGeometry(QRect(20, 150, 521, 211))
+        self.listeAppareils.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+"background-color: rgb(147, 147, 145);\n"
+"\n"
+"\n"
+"")
         self.listeAppareils.setEditTriggers(QAbstractItemView.EditTrigger.AnyKeyPressed|QAbstractItemView.EditTrigger.DoubleClicked|QAbstractItemView.EditTrigger.EditKeyPressed)
-        self.listeAppareils.setGridStyle(Qt.PenStyle.DashLine)
+        self.listeAppareils.setGridStyle(Qt.PenStyle.SolidLine)
         self.listeAppareils.setSortingEnabled(True)
         self.listeAppareils.horizontalHeader().setCascadingSectionResizes(False)
+        self.listeAppareils.horizontalHeader().setStretchLastSection(True)
+        self.listeAppareils.verticalHeader().setCascadingSectionResizes(False)
+        self.listeAppareils.verticalHeader().setMinimumSectionSize(24)
+        self.listeAppareils.verticalHeader().setDefaultSectionSize(35)
         self.formLayoutWidget = QWidget(w_listeAppareils)
         self.formLayoutWidget.setObjectName(u"formLayoutWidget")
-        self.formLayoutWidget.setGeometry(QRect(120, 410, 331, 61))
+        self.formLayoutWidget.setGeometry(QRect(120, 430, 331, 61))
         self.formLayout = QFormLayout(self.formLayoutWidget)
         self.formLayout.setObjectName(u"formLayout")
         self.formLayout.setContentsMargins(0, 0, 0, 0)
@@ -75,14 +82,14 @@ class Ui_w_listeAppareils(object):
         self.btnQuitter.setIcon(icon)
         self.btnSupprimer = QPushButton(w_listeAppareils)
         self.btnSupprimer.setObjectName(u"btnSupprimer")
-        self.btnSupprimer.setGeometry(QRect(310, 360, 141, 31))
+        self.btnSupprimer.setGeometry(QRect(310, 380, 141, 31))
         self.btnSupprimer.setStyleSheet(u"background-color: rgb(195, 0, 0);\n"
 "color: rgb(255, 255, 255);")
         icon1 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.EditDelete))
         self.btnSupprimer.setIcon(icon1)
         self.btnUtiliser = QPushButton(w_listeAppareils)
         self.btnUtiliser.setObjectName(u"btnUtiliser")
-        self.btnUtiliser.setGeometry(QRect(120, 360, 141, 31))
+        self.btnUtiliser.setGeometry(QRect(120, 380, 141, 31))
         self.btnUtiliser.setStyleSheet(u"background-color: rgb(102, 162, 60);\n"
 "color: rgb(255, 255, 255);")
         icon2 = QIcon()
@@ -98,7 +105,7 @@ class Ui_w_listeAppareils(object):
         self.btnListeUsages.setIcon(icon3)
         self.btnAjouterAppareil = QPushButton(w_listeAppareils)
         self.btnAjouterAppareil.setObjectName(u"btnAjouterAppareil")
-        self.btnAjouterAppareil.setGeometry(QRect(220, 480, 131, 31))
+        self.btnAjouterAppareil.setGeometry(QRect(220, 500, 131, 31))
         font = QFont()
         font.setBold(True)
         self.btnAjouterAppareil.setFont(font)
@@ -108,12 +115,13 @@ class Ui_w_listeAppareils(object):
         self.btnAjouterAppareil.setIcon(icon4)
         self.labelBienvenue = QLabel(w_listeAppareils)
         self.labelBienvenue.setObjectName(u"labelBienvenue")
-        self.labelBienvenue.setGeometry(QRect(130, 80, 311, 41))
+        self.labelBienvenue.setGeometry(QRect(130, 80, 311, 61))
         font1 = QFont()
         font1.setPointSize(18)
         font1.setBold(True)
         self.labelBienvenue.setFont(font1)
         self.labelBienvenue.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.labelBienvenue.setWordWrap(True)
         self.label_3 = QLabel(w_listeAppareils)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(0, 0, 41, 41))
@@ -127,6 +135,9 @@ class Ui_w_listeAppareils(object):
 
     def retranslateUi(self, w_listeAppareils):
         w_listeAppareils.setWindowTitle(QCoreApplication.translate("w_listeAppareils", u"Liste des appareils de l'utilisateur", None))
+#if QT_CONFIG(tooltip)
+        self.listeAppareils.setToolTip(QCoreApplication.translate("w_listeAppareils", u"<html><head/><body><p><br/></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
         self.nomAppareilLabel.setText(QCoreApplication.translate("w_listeAppareils", u"Nom appareil :", None))
         self.puissanceConsommerLabel.setText(QCoreApplication.translate("w_listeAppareils", u"Puissance consommer :", None))
         self.btnQuitter.setText(QCoreApplication.translate("w_listeAppareils", u"Deconnecter", None))
