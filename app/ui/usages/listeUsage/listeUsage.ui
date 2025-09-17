@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>561</width>
-    <height>384</height>
+    <height>408</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,25 +21,32 @@ color: rgb(0, 0, 0);</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>120</y>
+     <y>150</y>
      <width>521</width>
-     <height>231</height>
+     <height>211</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(121, 121, 121);</string>
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(147, 147, 145);</string>
    </property>
    <property name="sortingEnabled">
     <bool>true</bool>
    </property>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>35</number>
+   </attribute>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>60</y>
+     <x>89</x>
+     <y>80</y>
      <width>411</width>
-     <height>51</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
@@ -119,7 +126,7 @@ color: rgb(255, 255, 255);</string>
  </widget>
  <resources>
   <include location="../../../resources/Icons.qrc"/>
-  <include location="../../resources/Icons.qrc"/>
+  <include location="../../../resources/Icons.qrc"/>
  </resources>
  <connections/>
 </ui>

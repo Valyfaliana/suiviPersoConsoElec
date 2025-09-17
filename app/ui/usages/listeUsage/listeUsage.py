@@ -24,17 +24,20 @@ class Ui_w_listeUsage(object):
     def setupUi(self, w_listeUsage):
         if not w_listeUsage.objectName():
             w_listeUsage.setObjectName(u"w_listeUsage")
-        w_listeUsage.resize(561, 384)
+        w_listeUsage.resize(561, 408)
         w_listeUsage.setStyleSheet(u"background-color: rgb(213, 212, 210);\n"
 "color: rgb(0, 0, 0);")
         self.listeUsage = QTableView(w_listeUsage)
         self.listeUsage.setObjectName(u"listeUsage")
-        self.listeUsage.setGeometry(QRect(20, 120, 521, 231))
-        self.listeUsage.setStyleSheet(u"background-color: rgb(121, 121, 121);")
+        self.listeUsage.setGeometry(QRect(20, 150, 521, 211))
+        self.listeUsage.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+"background-color: rgb(147, 147, 145);")
         self.listeUsage.setSortingEnabled(True)
+        self.listeUsage.horizontalHeader().setStretchLastSection(True)
+        self.listeUsage.verticalHeader().setDefaultSectionSize(35)
         self.label = QLabel(w_listeUsage)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(80, 60, 411, 51))
+        self.label.setGeometry(QRect(89, 80, 411, 61))
         font = QFont()
         font.setPointSize(18)
         font.setBold(True)
