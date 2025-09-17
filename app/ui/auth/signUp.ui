@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>704</width>
-    <height>494</height>
+    <width>534</width>
+    <height>446</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,19 +20,17 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(153, 193, 241);</string>
+   <string notr="true">background-color: rgb(241, 240, 240);
+color: rgb(0, 0, 0);</string>
   </property>
   <widget class="QFrame" name="formFrame">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>150</y>
-     <width>451</width>
+     <x>200</x>
+     <y>160</y>
+     <width>321</width>
      <height>161</height>
     </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 120, 0);</string>
    </property>
    <layout class="QFormLayout">
     <item row="0" column="0">
@@ -95,47 +93,139 @@
     </item>
    </layout>
   </widget>
-  <widget class="QFrame" name="verticalFrame">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>221</width>
-     <height>471</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 190, 111);</string>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout"/>
-  </widget>
   <widget class="QPushButton" name="btnInscription">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>340</y>
+     <x>260</x>
+     <y>330</y>
      <width>191</width>
-     <height>26</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(38, 152, 207);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>S'inscrire</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btnConnecter">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>380</y>
-     <width>131</width>
-     <height>26</height>
+     <x>260</x>
+     <y>370</y>
+     <width>191</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(153, 153, 153);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>se connecter ?</string>
    </property>
   </widget>
+  <widget class="QGroupBox" name="partieGauche">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>0</y>
+     <width>191</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(38, 152, 207);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>19</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic; color:#66a23c;&quot;&gt;ECO&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;WATT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Gérez votre énergie, sans prise de tête.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>0</y>
+     <width>151</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../resources/Icons.qrc">:/Main/icon/mainLog.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources/Icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

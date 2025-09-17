@@ -15,22 +15,23 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFormLayout, QFrame, QLabel,
-    QLineEdit, QPushButton, QSizePolicy, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QFormLayout, QFrame, QGroupBox,
+    QLabel, QLineEdit, QPushButton, QSizePolicy,
+    QSpacerItem, QVBoxLayout, QWidget)
+import Icons_rc
 
 class Ui_w_SignUpForm(object):
     def setupUi(self, w_SignUpForm):
         if not w_SignUpForm.objectName():
             w_SignUpForm.setObjectName(u"w_SignUpForm")
         w_SignUpForm.setEnabled(True)
-        w_SignUpForm.resize(704, 494)
+        w_SignUpForm.resize(534, 446)
         w_SignUpForm.setAutoFillBackground(False)
-        w_SignUpForm.setStyleSheet(u"background-color: rgb(153, 193, 241);")
+        w_SignUpForm.setStyleSheet(u"background-color: rgb(241, 240, 240);\n"
+"color: rgb(0, 0, 0);")
         self.formFrame = QFrame(w_SignUpForm)
         self.formFrame.setObjectName(u"formFrame")
-        self.formFrame.setGeometry(QRect(240, 150, 451, 161))
-        self.formFrame.setStyleSheet(u"background-color: rgb(255, 120, 0);")
+        self.formFrame.setGeometry(QRect(200, 160, 321, 161))
         self.formLayout = QFormLayout(self.formFrame)
         self.formLayout.setObjectName(u"formLayout")
         self.nomLabel = QLabel(self.formFrame)
@@ -85,20 +86,60 @@ class Ui_w_SignUpForm(object):
 
         self.formLayout.setWidget(0, QFormLayout.ItemRole.FieldRole, self.nomLineEdit)
 
-        self.verticalFrame = QFrame(w_SignUpForm)
-        self.verticalFrame.setObjectName(u"verticalFrame")
-        self.verticalFrame.setGeometry(QRect(10, 10, 221, 471))
-        self.verticalFrame.setStyleSheet(u"background-color: rgb(255, 190, 111);")
-        self.verticalLayout = QVBoxLayout(self.verticalFrame)
-        self.verticalLayout.setObjectName(u"verticalLayout")
         self.btnInscription = QPushButton(w_SignUpForm)
         self.btnInscription.setObjectName(u"btnInscription")
-        self.btnInscription.setGeometry(QRect(360, 340, 191, 26))
+        self.btnInscription.setGeometry(QRect(260, 330, 191, 31))
+        font = QFont()
+        font.setBold(True)
+        self.btnInscription.setFont(font)
+        self.btnInscription.setStyleSheet(u"background-color: rgb(38, 152, 207);\n"
+"color: rgb(255, 255, 255);")
+        self.btnInscription.setAutoDefault(False)
+        self.btnInscription.setFlat(False)
         self.btnConnecter = QPushButton(w_SignUpForm)
         self.btnConnecter.setObjectName(u"btnConnecter")
-        self.btnConnecter.setGeometry(QRect(390, 380, 131, 26))
+        self.btnConnecter.setGeometry(QRect(260, 370, 191, 31))
+        self.btnConnecter.setFont(font)
+        self.btnConnecter.setStyleSheet(u"background-color: rgb(153, 153, 153);\n"
+"color: rgb(255, 255, 255);")
+        self.partieGauche = QGroupBox(w_SignUpForm)
+        self.partieGauche.setObjectName(u"partieGauche")
+        self.partieGauche.setGeometry(QRect(-10, 0, 191, 451))
+        self.partieGauche.setStyleSheet(u"background-color: rgb(38, 152, 207);\n"
+"color: rgb(255, 255, 255);")
+        self.verticalLayout = QVBoxLayout(self.partieGauche)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.label = QLabel(self.partieGauche)
+        self.label.setObjectName(u"label")
+        font1 = QFont()
+        font1.setPointSize(19)
+        font1.setBold(True)
+        self.label.setFont(font1)
+        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout.addWidget(self.label)
+
+        self.label_2 = QLabel(self.partieGauche)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.label_2.setWordWrap(True)
+
+        self.verticalLayout.addWidget(self.label_2)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout.addItem(self.verticalSpacer)
+
+        self.label_3 = QLabel(w_SignUpForm)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(290, 0, 151, 151))
+        self.label_3.setPixmap(QPixmap(u":/Main/icon/mainLog.png"))
+        self.label_3.setScaledContents(True)
 
         self.retranslateUi(w_SignUpForm)
+
+        self.btnInscription.setDefault(False)
+
 
         QMetaObject.connectSlotsByName(w_SignUpForm)
     # setupUi
@@ -112,5 +153,8 @@ class Ui_w_SignUpForm(object):
         self.password1Label.setText(QCoreApplication.translate("w_SignUpForm", u"Confirmer mot de passe : ", None))
         self.btnInscription.setText(QCoreApplication.translate("w_SignUpForm", u"S'inscrire", None))
         self.btnConnecter.setText(QCoreApplication.translate("w_SignUpForm", u"se connecter ?", None))
+        self.label.setText(QCoreApplication.translate("w_SignUpForm", u"<html><head/><body><p><span style=\" font-style:italic; color:#66a23c;\">ECO</span><span style=\" font-style:italic;\">WATT</span></p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("w_SignUpForm", u"G\u00e9rez votre \u00e9nergie, sans prise de t\u00eate.", None))
+        self.label_3.setText("")
     # retranslateUi
 

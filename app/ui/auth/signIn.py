@@ -25,12 +25,11 @@ class Ui_w_signIn(object):
         if not w_signIn.objectName():
             w_signIn.setObjectName(u"w_signIn")
         w_signIn.resize(534, 446)
-        w_signIn.setStyleSheet(u"background-color: rgb(246, 245, 244);\n"
-"color: rgb(255, 255, 255);\n"
+        w_signIn.setStyleSheet(u"background-color: rgb(241, 240, 240);\n"
 "color: rgb(0, 0, 0);")
         self.formFrame = QFrame(w_signIn)
         self.formFrame.setObjectName(u"formFrame")
-        self.formFrame.setGeometry(QRect(220, 260, 291, 81))
+        self.formFrame.setGeometry(QRect(220, 200, 291, 81))
         self.formLayout = QFormLayout(self.formFrame)
         self.formLayout.setObjectName(u"formLayout")
         self.pseudoLabel = QLabel(self.formFrame)
@@ -84,29 +83,23 @@ class Ui_w_signIn(object):
 
         self.label_3 = QLabel(w_signIn)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(290, 40, 151, 151))
+        self.label_3.setGeometry(QRect(290, 0, 151, 151))
         self.label_3.setPixmap(QPixmap(u":/Main/icon/mainLog.png"))
         self.label_3.setScaledContents(True)
-        self.groupBtn = QFrame(w_signIn)
-        self.groupBtn.setObjectName(u"groupBtn")
-        self.groupBtn.setGeometry(QRect(250, 350, 241, 81))
-        self.verticalLayout_2 = QVBoxLayout(self.groupBtn)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.btnConnection = QPushButton(self.groupBtn)
+        self.btnConnection = QPushButton(w_signIn)
         self.btnConnection.setObjectName(u"btnConnection")
+        self.btnConnection.setGeometry(QRect(250, 300, 221, 31))
         font1 = QFont()
         font1.setBold(True)
         self.btnConnection.setFont(font1)
         self.btnConnection.setStyleSheet(u"background-color: rgb(38, 152, 207);\n"
 "color: rgb(255, 255, 255);")
-
-        self.verticalLayout_2.addWidget(self.btnConnection)
-
-        self.btnInscription = QPushButton(self.groupBtn)
+        self.btnInscription = QPushButton(w_signIn)
         self.btnInscription.setObjectName(u"btnInscription")
-
-        self.verticalLayout_2.addWidget(self.btnInscription)
-
+        self.btnInscription.setGeometry(QRect(250, 340, 221, 31))
+        self.btnInscription.setFont(font1)
+        self.btnInscription.setStyleSheet(u"background-color: rgb(153, 153, 153);\n"
+"color: rgb(255, 255, 255);")
 
         self.retranslateUi(w_signIn)
 
@@ -117,7 +110,7 @@ class Ui_w_signIn(object):
         w_signIn.setWindowTitle(QCoreApplication.translate("w_signIn", u"Connection", None))
         self.pseudoLabel.setText(QCoreApplication.translate("w_signIn", u"Pseudo :", None))
         self.motDePasseLabel.setText(QCoreApplication.translate("w_signIn", u"Mot de passe :", None))
-        self.label.setText(QCoreApplication.translate("w_signIn", u"<html><head/><body><p><span style=\" color:#66a23c;\">ECO</span>WATT</p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("w_signIn", u"<html><head/><body><p><span style=\" font-style:italic; color:#66a23c;\">ECO</span><span style=\" font-style:italic;\">WATT</span></p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("w_signIn", u"G\u00e9rez votre \u00e9nergie, sans prise de t\u00eate.", None))
         self.label_3.setText("")
         self.btnConnection.setText(QCoreApplication.translate("w_signIn", u"Connecter", None))
