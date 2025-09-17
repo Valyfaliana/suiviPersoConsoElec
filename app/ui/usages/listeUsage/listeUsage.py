@@ -17,30 +17,50 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHeaderView, QLabel, QPushButton,
     QSizePolicy, QTableView, QWidget)
+import Icons_rc
+import Icons_rc
 
 class Ui_w_listeUsage(object):
     def setupUi(self, w_listeUsage):
         if not w_listeUsage.objectName():
             w_listeUsage.setObjectName(u"w_listeUsage")
-        w_listeUsage.resize(567, 489)
+        w_listeUsage.resize(561, 384)
+        w_listeUsage.setStyleSheet(u"background-color: rgb(213, 212, 210);\n"
+"color: rgb(0, 0, 0);")
         self.listeUsage = QTableView(w_listeUsage)
         self.listeUsage.setObjectName(u"listeUsage")
-        self.listeUsage.setGeometry(QRect(20, 170, 531, 231))
+        self.listeUsage.setGeometry(QRect(20, 120, 521, 231))
+        self.listeUsage.setStyleSheet(u"background-color: rgb(121, 121, 121);")
         self.listeUsage.setSortingEnabled(True)
         self.label = QLabel(w_listeUsage)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(80, 70, 411, 71))
+        self.label.setGeometry(QRect(80, 60, 411, 51))
         font = QFont()
-        font.setPointSize(14)
+        font.setPointSize(18)
         font.setBold(True)
         self.label.setFont(font)
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.btnQuitter = QPushButton(w_listeUsage)
         self.btnQuitter.setObjectName(u"btnQuitter")
-        self.btnQuitter.setGeometry(QRect(420, 20, 111, 31))
+        self.btnQuitter.setGeometry(QRect(450, 0, 111, 41))
+        self.btnQuitter.setStyleSheet(u"background-color: rgb(170, 0, 0);\n"
+"color: rgb(255, 255, 255);")
+        icon = QIcon()
+        icon.addFile(u":/utils/icon/disruption (1).png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnQuitter.setIcon(icon)
         self.btnListeAppareils = QPushButton(w_listeUsage)
         self.btnListeAppareils.setObjectName(u"btnListeAppareils")
-        self.btnListeAppareils.setGeometry(QRect(40, 20, 121, 31))
+        self.btnListeAppareils.setGeometry(QRect(320, 0, 121, 41))
+        self.btnListeAppareils.setStyleSheet(u"background-color: rgb(102, 162, 60);\n"
+"color: rgb(255, 255, 255);")
+        icon1 = QIcon()
+        icon1.addFile(u":/utils/icon/responsive (1).png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnListeAppareils.setIcon(icon1)
+        self.label_3 = QLabel(w_listeUsage)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(0, 0, 41, 41))
+        self.label_3.setPixmap(QPixmap(u":/Main/icon/mainLog.png"))
+        self.label_3.setScaledContents(True)
 
         self.retranslateUi(w_listeUsage)
 
@@ -50,7 +70,8 @@ class Ui_w_listeUsage(object):
     def retranslateUi(self, w_listeUsage):
         w_listeUsage.setWindowTitle(QCoreApplication.translate("w_listeUsage", u"Liste d'utilisation", None))
         self.label.setText(QCoreApplication.translate("w_listeUsage", u"Vos consommations electrique", None))
-        self.btnQuitter.setText(QCoreApplication.translate("w_listeUsage", u"Quitter", None))
+        self.btnQuitter.setText(QCoreApplication.translate("w_listeUsage", u"Deconnecter", None))
         self.btnListeAppareils.setText(QCoreApplication.translate("w_listeUsage", u"Appareils", None))
+        self.label_3.setText("")
     # retranslateUi
 

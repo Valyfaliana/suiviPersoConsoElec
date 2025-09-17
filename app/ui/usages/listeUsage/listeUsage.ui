@@ -6,21 +6,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>567</width>
-    <height>489</height>
+    <width>561</width>
+    <height>384</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Liste d'utilisation</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(213, 212, 210);
+color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QTableView" name="listeUsage">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>170</y>
-     <width>531</width>
+     <y>120</y>
+     <width>521</width>
      <height>231</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(121, 121, 121);</string>
    </property>
    <property name="sortingEnabled">
     <bool>true</bool>
@@ -30,14 +37,14 @@
    <property name="geometry">
     <rect>
      <x>80</x>
-     <y>70</y>
+     <y>60</y>
      <width>411</width>
-     <height>71</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
+     <pointsize>18</pointsize>
      <bold>true</bold>
     </font>
    </property>
@@ -51,30 +58,68 @@
   <widget class="QPushButton" name="btnQuitter">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>20</y>
+     <x>450</x>
+     <y>0</y>
      <width>111</width>
-     <height>31</height>
+     <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(170, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
    <property name="text">
-    <string>Quitter</string>
+    <string>Deconnecter</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../resources/Icons.qrc">
+     <normaloff>:/utils/icon/disruption (1).png</normaloff>:/utils/icon/disruption (1).png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btnListeAppareils">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>20</y>
+     <x>320</x>
+     <y>0</y>
      <width>121</width>
-     <height>31</height>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(102, 162, 60);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Appareils</string>
    </property>
+   <property name="icon">
+    <iconset resource="../../../resources/Icons.qrc">
+     <normaloff>:/utils/icon/responsive (1).png</normaloff>:/utils/icon/responsive (1).png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../../resources/Icons.qrc">:/Main/icon/mainLog.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../resources/Icons.qrc"/>
+  <include location="../../resources/Icons.qrc"/>
+ </resources>
  <connections/>
 </ui>
