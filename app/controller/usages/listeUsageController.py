@@ -1,6 +1,6 @@
 from app.models.usageModel import UsageModel
 from app.ui.pages.pageListeUsages import PageListeUsages
-from PySide6.QtSql import QSqlQueryModel, QSqlDatabase
+from PySide6.QtSql import QSqlQueryModel, QSqlDatabase, QSqlQuery
 from PySide6.QtCore import QSortFilterProxyModel
 
 
@@ -24,15 +24,19 @@ class ListeUsageController:
 
         # Recuperer les data de la base de donnee
         model = QSqlQueryModel()
-        query = """
+        query = QSqlQuery()
+        query.prepare("""
         SELECT a.nom AS Nom,
                u.duree AS Duree_heures,
                u.date_usage AS Date_utilisation,
                (u.duree * a.puissance / 1000) AS Consommation_KWh
         FROM usages u
         JOIN appareils a ON u.appareil_id = a.id
-        """
-        model.setQuery(query, db)
+        WHERE u.user_id=?
+        """)
+        query.addBindValue(self.mainWin.user["id"])
+        query.exec()
+        model.setQuery(query)
 
         # Pour activer le trie avec QSqlQueryModel
         proxy = QSortFilterProxyModel()
