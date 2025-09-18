@@ -12,7 +12,7 @@ def main():
     db = QSqlDatabase.addDatabase("QSQLITE")
     db.setDatabaseName(PATH_DB)
     if not db.open():
-        print("Erreur connexion base de données")
+        print("Erreur connexion base de données :", db.lastError().text())
         sys.exit(1)
 
     # Création de la fenêtre principale
